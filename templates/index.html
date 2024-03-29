@@ -1,11 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube vedio subtitle downloader</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="background-color: #111827">
+    <div class="container">
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+          <div class="card p-3 mt-5" style="background-color: #1f2937">
+            <h2 class="text-center card-header text-white fs-4 fw-bold">
+              Youtube vedio subtitle downloader
+            </h2>
+            <form action="/" class="main-form" method="POST">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label text-light"
+                  >Youtube URL</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  name="yturl"
+                  placeholder="Enter video URL"
+                  style="background-color: #111827; color: #fff;"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Download Subtitle
+              </button>
+            </form>
+          </div>
+          {% if url %}
+          <div class="card p-2">
+            <div class="text-center">
+              <h6>Downloaded in your Folder as subtitle</h6>
+              <a href="download/vedio.srt" download><h6>Download Subtitles File</h6></a>
+            </div>
+          </div>
+          {% elif error %}
+          <div class="alert alert-warning mt-2" role="alert">{{error}}</div>
+          {% endif %}
+        </div>
+        <div class="col-4"></div>
+      </div>
+    </div>
+  </body>
 </html>

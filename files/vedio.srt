@@ -1,0 +1,243 @@
+1
+00:00:00,000 --> 00:00:02,939
+DevOps a set of practices to build test
+
+2
+00:00:02,939 --> 00:00:04,799
+and release your code in small frequent
+
+3
+00:00:04,799 --> 00:00:06,750
+steps one of the core practices of
+
+4
+00:00:06,750 --> 00:00:08,880
+DevOps is continuous integration which
+
+5
+00:00:08,880 --> 00:00:10,620
+has developers commit their code to a
+
+6
+00:00:10,620 --> 00:00:13,049
+shared repository often on a daily basis
+
+7
+00:00:13,049 --> 00:00:14,519
+each commit triggers an automated
+
+8
+00:00:14,519 --> 00:00:16,710
+workflow on a CI server that can notify
+
+9
+00:00:16,710 --> 00:00:18,600
+developers of any issues integrating
+
+10
+00:00:18,600 --> 00:00:20,460
+their changes when a repo evolves in
+
+11
+00:00:20,460 --> 00:00:22,080
+small steps like this it prevents what's
+
+12
+00:00:22,080 --> 00:00:24,420
+known as merge Towel imagine Mary you're
+
+13
+00:00:24,420 --> 00:00:26,580
+back and developer builds a new API for
+
+14
+00:00:26,580 --> 00:00:27,210
+your product
+
+15
+00:00:27,210 --> 00:00:29,279
+shortly after Jane your front-end
+
+16
+00:00:29,279 --> 00:00:31,830
+developer starts work on a new UI a few
+
+17
+00:00:31,830 --> 00:00:33,450
+months later when it comes time to merge
+
+18
+00:00:33,450 --> 00:00:34,890
+their features we find that they're
+
+19
+00:00:34,890 --> 00:00:36,630
+completely incompatible the build fails
+
+20
+00:00:36,630 --> 00:00:38,309
+and we now have to spend a bunch of time
+
+21
+00:00:38,309 --> 00:00:40,050
+and money resolving these conflicts
+
+22
+00:00:40,050 --> 00:00:41,940
+let's go ahead and build a continuous
+
+23
+00:00:41,940 --> 00:00:43,739
+integration pipeline now to see how it
+
+24
+00:00:43,739 --> 00:00:45,600
+prevents issues like this here on github
+
+25
+00:00:45,600 --> 00:00:47,879
+I have a node.js web app in order to
+
+26
+00:00:47,879 --> 00:00:49,559
+deliver this out to my customers I need
+
+27
+00:00:49,559 --> 00:00:51,840
+to run three commands test build and
+
+28
+00:00:51,840 --> 00:00:53,879
+deploy I can automate this entire
+
+29
+00:00:53,879 --> 00:00:55,680
+process in the cloud by using a CI
+
+30
+00:00:55,680 --> 00:00:58,020
+service like github actions first I
+
+31
+00:00:58,020 --> 00:00:59,550
+create a workflow and then I tell it to
+
+32
+00:00:59,550 --> 00:01:01,770
+run on every push to the master branch
+
+33
+00:01:01,770 --> 00:01:04,019
+the event triggers a job that runs on a
+
+34
+00:01:04,019 --> 00:01:06,150
+Linux container in the cloud and we tell
+
+35
+00:01:06,150 --> 00:01:07,860
+the container what to do as a series of
+
+36
+00:01:07,860 --> 00:01:10,080
+steps first it checks out the code in
+
+37
+00:01:10,080 --> 00:01:11,970
+this github repo then sets up nodejs
+
+38
+00:01:11,970 --> 00:01:14,280
+installs my dependencies and runs my
+
+39
+00:01:14,280 --> 00:01:14,760
+tests
+
+40
+00:01:14,760 --> 00:01:17,189
+build and deploy commands now anytime we
+
+41
+00:01:17,189 --> 00:01:18,600
+commit code to the master branch in this
+
+42
+00:01:18,600 --> 00:01:20,970
+repo it will run this workflow if any of
+
+43
+00:01:20,970 --> 00:01:22,830
+the steps fail the bad software won't be
+
+44
+00:01:22,830 --> 00:01:24,150
+delivered to our customers and will
+
+45
+00:01:24,150 --> 00:01:25,530
+automatically know there's an issue that
+
+46
+00:01:25,530 --> 00:01:27,060
+needs to be addressed at the end of the
+
+47
+00:01:27,060 --> 00:01:29,759
+day CI CD offers two main benefits it
+
+48
+00:01:29,759 --> 00:01:31,049
+helps you automate things that would
+
+49
+00:01:31,049 --> 00:01:32,520
+otherwise have to be done manually by
+
+50
+00:01:32,520 --> 00:01:34,020
+developers that will increase your
+
+51
+00:01:34,020 --> 00:01:35,909
+velocity but it also detects small
+
+52
+00:01:35,909 --> 00:01:37,740
+problems early before they can grow into
+
+53
+00:01:37,740 --> 00:01:39,930
+major disasters and that results in
+
+54
+00:01:39,930 --> 00:01:42,210
+higher code quality this has been C ICD
+
+55
+00:01:42,210 --> 00:01:44,670
+or DevOps in 100 seconds make sure to
+
+56
+00:01:44,670 --> 00:01:45,780
+hit the like button if you want to see
+
+57
+00:01:45,780 --> 00:01:47,520
+more short videos like this and stay
+
+58
+00:01:47,520 --> 00:01:49,110
+tuned tomorrow for a full dead loss
+
+59
+00:01:49,110 --> 00:01:51,420
+project using github actions thanks for
+
+60
+00:01:51,420 --> 00:01:53,070
+watching and I will see you in the next
+
+61
+00:01:53,070 --> 00:01:55,250
+one
