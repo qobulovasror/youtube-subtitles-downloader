@@ -37,7 +37,7 @@ def get_subtitles(url):
         with open(f'files/vedio.srt', 'w') as the_file:
             the_file.write(caption)
         subtitle_file = "files/vedio.srt"
-        return (subtitle_file, 200)
+        return (subtitle_file, 200, caption)
     except Exception as ex: 
         return (f"Server error: Somthing went wrong:  {ex}", 501)
 
@@ -47,9 +47,10 @@ def home():
     if request.method == 'POST':
         url = request.form['yturl']
         res_data = get_subtitles(url)
-        print(res_data)
+        caption = res_data[2]#.replace("\n", "<br/>")
+        # caption_for_html = res_data[2].replace("\n", "<br/>")
         if res_data[1]==200:
-            return render_template('index.html', url=res_data[0])
+            return render_template('index.html', url=res_data[0], caption=caption)
         else:
             return render_template('index.html', error=res_data[0], code=res_data[1])
     else:
