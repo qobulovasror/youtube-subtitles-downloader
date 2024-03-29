@@ -64,4 +64,4 @@ def get_files(path):
         return render_template('index.html', error=f"File Not Found : {path}"), 404
 
 if __name__=="__main__":
-    app.run(port=5200, debug=True)
+    app.run()
